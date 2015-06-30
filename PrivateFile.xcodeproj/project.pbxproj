@@ -208,7 +208,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = ilegendsoft;
+				ORGANIZATIONNAME = LAS;
 				TargetAttributes = {
 					9DC127501A382E61008B4182 = {
 						CreatedOnToolsVersion = 6.1.1;

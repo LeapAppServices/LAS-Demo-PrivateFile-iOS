@@ -3,7 +3,7 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 14/12/10.
-//  Copyright (c) 2014年 ilegendsoft. All rights reserved.
+//  Copyright (c) 2014年 LAS. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

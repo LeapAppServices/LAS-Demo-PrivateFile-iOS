@@ -3,7 +3,7 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 15/2/28.
-//  Copyright (c) 2015年 ilegendsoft. All rights reserved.
+//  Copyright (c) 2015年 LAS. All rights reserved.
 //
 
 #import "SignUpViewController.h"
