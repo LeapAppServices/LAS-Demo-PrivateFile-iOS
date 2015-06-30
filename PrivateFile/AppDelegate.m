@@ -18,8 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    // ****************************************************************************
+    // Uncommit fill in with your LAS credentials:
+    // ****************************************************************************
 #warning Please fill in with your LAS credentials
-    [LAS setApplicationId:@"APPLICATION_ID_HERE" clientKey:@"CLIENT_KEY_HERE"];
+    // [LAS setApplicationId:@"APPLICATION_ID_HERE" clientKey:@"CLIENT_KEY_HERE"];
+    
     return YES;
 }
 
