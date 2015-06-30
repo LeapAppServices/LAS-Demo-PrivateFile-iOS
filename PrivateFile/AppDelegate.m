@@ -19,8 +19,7 @@
     // Override point for customization after application launch.
     
 #warning Please fill in with your LAS credentials
-//    [LAS setApplicationId:@"APPLICATION_ID_HERE" clientKey:@"CLIENT_KEY_HERE"];
-    [LAS setApplicationId:@"549a9e9860b208c4bd31dcbe" clientKey:@"VJqemGCytyF1rSjoAg"];
+    [LAS setApplicationId:@"APPLICATION_ID_HERE" clientKey:@"CLIENT_KEY_HERE"];
     return YES;
 }
 
