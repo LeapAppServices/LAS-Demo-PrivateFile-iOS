@@ -14,6 +14,7 @@
 		9D209B8B1ADD1FC400A4AE3F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC127951A383A77008B4182 /* SVProgressHUD.m */; };
 		9D209B8C1ADD1FC800A4AE3F /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC127911A383A77008B4182 /* SVIndefiniteAnimatedView.m */; };
 		9D608DAB1B422DEE00888180 /* LAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D608DAA1B422DEE00888180 /* LAS.framework */; };
+		9D8C6D5E1B427D8000036055 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8C6D5D1B427D8000036055 /* libz.dylib */; };
 		9D91AAC71AEF977B000E32F0 /* PasswordResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D91AAC61AEF977B000E32F0 /* PasswordResetViewController.m */; };
 		9D91AACD1AEF9D3D000E32F0 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D91AACC1AEF9D3D000E32F0 /* SettingsTableViewController.m */; };
 		9D92CC5D1AF1FC5C003A1A30 /* PasswordChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D92CC5C1AF1FC5C003A1A30 /* PasswordChangeViewController.m */; };
@@ -39,6 +40,7 @@
 		9D209B871ADD1FA800A4AE3F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9D209B891ADD1FAD00A4AE3F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		9D608DAA1B422DEE00888180 /* LAS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LAS.framework; path = Frameworks/LAS.framework; sourceTree = "<group>"; };
+		9D8C6D5D1B427D8000036055 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9D91AAC51AEF977B000E32F0 /* PasswordResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordResetViewController.h; sourceTree = "<group>"; };
 		9D91AAC61AEF977B000E32F0 /* PasswordResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordResetViewController.m; sourceTree = "<group>"; };
 		9D91AACB1AEF9D3D000E32F0 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D8C6D5E1B427D8000036055 /* libz.dylib in Frameworks */,
 				9D608DAB1B422DEE00888180 /* LAS.framework in Frameworks */,
 				9D209B8A1ADD1FAD00A4AE3F /* CoreTelephony.framework in Frameworks */,
 				9D209B881ADD1FA800A4AE3F /* MobileCoreServices.framework in Frameworks */,
@@ -92,6 +95,7 @@
 		9DAC42E81AA1B0F600A69163 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D8C6D5D1B427D8000036055 /* libz.dylib */,
 				9D608DAA1B422DEE00888180 /* LAS.framework */,
 				9D209B891ADD1FAD00A4AE3F /* CoreTelephony.framework */,
 				9D209B871ADD1FA800A4AE3F /* MobileCoreServices.framework */,
