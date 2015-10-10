@@ -3,7 +3,7 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 14/12/10.
-//  Copyright (c) 2014年 LAS. All rights reserved.
+//  Copyright (c) 2014年 MaxLeap. All rights reserved.
 //
 
 #import "FileDetailViewController.h"
@@ -42,7 +42,7 @@
         displayFile();
     } else {
         // 说明：directory 是本地文件根目录，对应于 remoteRootPath，传 nil 的话，文件会被保存到缺省路径下，文件路径可以用 self.file.localPath 获取
-        [LASPrivateFileManager downloadContentsOfFile:self.file toDirectory:nil block:^(NSString *filePath, NSError *error) {
+        [self.file downloadInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
                 [SVProgressHUD showErrorWithStatus:error.description maskType:SVProgressHUDMaskTypeBlack];
             } else {
@@ -98,13 +98,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [LASAnalytics beginLogPageView:@"FileDetail"];
+    [MLAnalytics beginLogPageView:@"FileDetail"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [LASAnalytics endLogPageView:@"FileDetail"];
+    [MLAnalytics endLogPageView:@"FileDetail"];
 }
 
 #pragma mark -

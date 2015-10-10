@@ -3,11 +3,11 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 15/2/28.
-//  Copyright (c) 2015年 LAS. All rights reserved.
+//  Copyright (c) 2015年 MaxLeap. All rights reserved.
 //
 
 #import "SignInViewController.h"
-@import LAS;
+#import <MaxLeap/MaxLeap.h>
 
 @interface SignInViewController ()
 
@@ -23,13 +23,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [LASAnalytics beginLogPageView:@"SignIn"];
+    [MLAnalytics beginLogPageView:@"SignIn"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [LASAnalytics endLogPageView:@"SignIn"];
+    [MLAnalytics endLogPageView:@"SignIn"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +58,7 @@
         return;
     }
     
-    [LASUserManager logInWithUsernameInBackground:username password:password block:^(LASUser *user, NSError *error) {
+    [MLUser logInWithUsernameInBackground:username password:password block:^(MLUser *user, NSError *error) {
         if (user) {
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {

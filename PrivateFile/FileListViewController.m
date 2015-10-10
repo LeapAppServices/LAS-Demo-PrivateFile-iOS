@@ -3,7 +3,7 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 14/12/10.
-//  Copyright (c) 2014年 LAS. All rights reserved.
+//  Copyright (c) 2014年 MaxLeap. All rights reserved.
 //
 
 #import "FileListViewController.h"
@@ -13,18 +13,13 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface FileListViewController() {
-    BOOL _isDefaultACLSet;
-}
-@end
-
 @implementation FileListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     if (!self.directory) {
-        self.directory = [[LASPrivateFile alloc] initWithRemotePath:@"/"];
+        self.directory = [MLPrivateFile fileWithRemotePath:@"/"];
         
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"upload" style:UIBarButtonItemStyleBordered target:self action:@selector(upload:)];
         
@@ -62,33 +57,20 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [LASAnalytics beginLogPageView:[self viewName]];
+    [MLAnalytics beginLogPageView:[self viewName]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [LASAnalytics endLogPageView:[self viewName]];
+    [MLAnalytics endLogPageView:[self viewName]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if ([LASUser currentUser].isAuthenticated) {
-        [self trySetDefaultACL];
+    if ([MLUser currentUser].isAuthenticated) {
         [self refresh:nil];
     }
-}
-
-- (void)trySetDefaultACL {
-    
-    if (_isDefaultACLSet) {
-        return;
-    }
-    
-    LASACL *defaultACL = [LASACL ACL];
-    [defaultACL setPublicReadAccess:YES];
-    [LASACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
-    _isDefaultACLSet = YES;
 }
 
 - (NSString *)docPath {
@@ -146,18 +128,18 @@
     
     NSString *filename = path.lastPathComponent;
     NSString *remotePath = [path stringByReplacingOccurrencesOfString:[self docPath] withString:@""];
-    LASPrivateFile *file = [[LASPrivateFile alloc] initWithLocalFileAtPath:path remotePath:remotePath];
+    MLPrivateFile *file = [[MLPrivateFile alloc] initWithLocalFileAtPath:path remotePath:remotePath];
     
     NSString *status = [NSString stringWithFormat:@"start uploading %@", filename];
     [SVProgressHUD showWithStatus:status maskType:SVProgressHUDMaskTypeBlack];
     NSLog(@"Uploading %@", filename);
     
-    [LASPrivateFileManager saveFileInBackground:file overwrite:NO block:^(BOOL succeeded, NSError *error) {
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [SVProgressHUD showSuccessWithStatus:@"succeed" maskType:SVProgressHUDMaskTypeBlack];
             NSLog(@"========= Succeed ==========");
         } else {
-            NSString *errMsg = [NSString stringWithFormat:@"failed, %@", error.localizedDescription?:error.userInfo[LASErrorMessageKey]];
+            NSString *errMsg = [NSString stringWithFormat:@"failed, %@", error.localizedDescription?:error.userInfo[NSLocalizedDescriptionKey]];
             [SVProgressHUD showErrorWithStatus:errMsg maskType:SVProgressHUDMaskTypeBlack];
         }
         
@@ -169,18 +151,18 @@
 }
 
 - (IBAction)removeAll:(id)sender {
-    LASPrivateFile *root = [[LASPrivateFile alloc] initWithRemotePath:@"/"];
-    [LASPrivateFileManager deleteFileInBackground:root block:^(BOOL succeeded, NSError *error) {
+    MLPrivateFile *root = [MLPrivateFile fileWithRemotePath:@"/"];
+    [root deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [self refresh:nil];
     }];
 }
 
 - (IBAction)refresh:(id)sender {
     
-    if ([LASUser currentUser]) {
+    if ([MLUser currentUser]) {
         [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
         
-        [LASPrivateFileManager getMetaDataInBackground:self.directory shouldGetContents:YES block:^(BOOL succeeded, NSError *error) {
+        [self.directory getMetadataIncludeChildrenInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
                 [SVProgressHUD showErrorWithStatus:error.description maskType:SVProgressHUDMaskTypeBlack];
             } else {
@@ -200,7 +182,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    LASPrivateFile *theFile = self.directory.contents[indexPath.row];
+    MLPrivateFile *theFile = self.directory.contents[indexPath.row];
     
     UITableViewCell *cell = nil;
     if (theFile.isDirectory) {
@@ -232,8 +214,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        LASPrivateFile *theFile = self.directory.contents[indexPath.row];
-        [LASPrivateFileManager deleteFileInBackground:theFile block:^(BOOL succeeded, NSError *error) {
+        MLPrivateFile *theFile = self.directory.contents[indexPath.row];
+        [theFile deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 [self refresh:nil];
             }

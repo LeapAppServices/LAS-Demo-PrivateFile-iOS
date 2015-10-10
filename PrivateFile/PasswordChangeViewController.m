@@ -3,11 +3,11 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 4/30/15.
-//  Copyright (c) 2015 LAS. All rights reserved.
+//  Copyright (c) 2015 MaxLeap. All rights reserved.
 //
 
 #import "PasswordChangeViewController.h"
-@import LAS;
+#import <MaxLeap/MaxLeap.h>
 
 @interface PasswordChangeViewController () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *oldPasswordField;
@@ -49,16 +49,16 @@
 
 - (IBAction)changePassword:(id)sender {
     
-    NSString *oldPassword = self.oldPasswordField.text;
+    NSString *currentPassword = self.oldPasswordField.text;
     NSString *newPassword = self.passwordField.text;
     NSString *newPassword2 = self.passwordAgainField.text;
     BOOL shouldContine = YES;
     
-    if (oldPassword.length == 0
+    if (currentPassword.length == 0
         || newPassword.length == 0
         || newPassword2.length == 0) {
         
-        if (oldPassword.length == 0) {
+        if (currentPassword.length == 0) {
             self.oldPasswordField.layer.borderColor = [UIColor redColor].CGColor;
         }
         if (newPassword.length == 0) {
@@ -75,7 +75,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"The two new passwords are not the same." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         shouldContine = NO;
-    } else if ([newPassword isEqualToString:oldPassword]) {
+    } else if ([newPassword isEqualToString:currentPassword]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"The new password is same as old password." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         shouldContine = NO;
@@ -85,16 +85,31 @@
         return;
     }
     
-    [LASUserManager changePasswordWithNewPassword:newPassword oldPassword:oldPassword block:^(BOOL succeeded, NSError *error) {
+    [[MLUser currentUser] checkIsPasswordMatchInBackground:currentPassword block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Password Change Success!" message:@"Please login using your new password." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-            alert.tag = 888;
-            [alert show];
-            [LASUserManager logOut];
+            [MLUser currentUser].password = newPassword;
+            [[MLUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Password Change Success!" message:@"Please login using your new password." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                    alert.tag = 888;
+                    [alert show];
+                    [MLUser logOut];
+                } else {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Password Change Failed" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    alert.tag = 999;
+                    [alert show];
+                }
+            }];
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Password Change Failed" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            alert.tag = 999;
-            [alert show];
+            if (error.code == kMLErrorPasswordMisMatch) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wrong current password" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                alert.tag = 999;
+                [alert show];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Password Change Failed" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                alert.tag = 999;
+                [alert show];
+            }
         }
     }];
 }

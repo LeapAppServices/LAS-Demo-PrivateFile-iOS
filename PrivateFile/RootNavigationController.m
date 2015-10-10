@@ -3,11 +3,11 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 15/2/28.
-//  Copyright (c) 2015年 LAS. All rights reserved.
+//  Copyright (c) 2015年 MaxLeap. All rights reserved.
 //
 
 #import "RootNavigationController.h"
-@import LAS.LASUser;
+#import <MaxLeap/MLUser.h>
 
 @interface RootNavigationController ()
 
@@ -23,7 +23,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (NO == [LASUser currentUser].isAuthenticated) {
+    if (NO == [MLUser currentUser].isAuthenticated) {
         [self popToRootViewControllerAnimated:NO];
         [self performSegueWithIdentifier:@"showLoginView" sender:nil];
     }

@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D209B841ADD1F9A00A4AE3F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D209B831ADD1F9A00A4AE3F /* libsqlite3.dylib */; };
 		9D209B861ADD1FA200A4AE3F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D209B851ADD1FA200A4AE3F /* SystemConfiguration.framework */; };
 		9D209B881ADD1FA800A4AE3F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D209B871ADD1FA800A4AE3F /* MobileCoreServices.framework */; };
 		9D209B8A1ADD1FAD00A4AE3F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D209B891ADD1FAD00A4AE3F /* CoreTelephony.framework */; };
 		9D209B8B1ADD1FC400A4AE3F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC127951A383A77008B4182 /* SVProgressHUD.m */; };
 		9D209B8C1ADD1FC800A4AE3F /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC127911A383A77008B4182 /* SVIndefiniteAnimatedView.m */; };
-		9D608DAB1B422DEE00888180 /* LAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D608DAA1B422DEE00888180 /* LAS.framework */; };
-		9D8C6D5E1B427D8000036055 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8C6D5D1B427D8000036055 /* libz.dylib */; };
 		9D91AAC71AEF977B000E32F0 /* PasswordResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D91AAC61AEF977B000E32F0 /* PasswordResetViewController.m */; };
 		9D91AACD1AEF9D3D000E32F0 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D91AACC1AEF9D3D000E32F0 /* SettingsTableViewController.m */; };
 		9D92CC5D1AF1FC5C003A1A30 /* PasswordChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D92CC5C1AF1FC5C003A1A30 /* PasswordChangeViewController.m */; };
+		9DA8D9D41BC914BB00644D48 /* MaxLeap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA8D9D31BC914BB00644D48 /* MaxLeap.framework */; settings = {ASSET_TAGS = (); }; };
+		9DA8D9D61BC914C700644D48 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA8D9D51BC914C700644D48 /* libsqlite3.tbd */; };
+		9DA8D9D81BC914CF00644D48 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA8D9D71BC914CF00644D48 /* libz.tbd */; };
 		9DAC42EB1AA1C0E300A69163 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC42EA1AA1C0E300A69163 /* SignInViewController.m */; };
 		9DAC42EE1AA1C0F500A69163 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC42ED1AA1C0F500A69163 /* SignUpViewController.m */; };
 		9DAC42F11AA1C64A00A69163 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC42F01AA1C64A00A69163 /* RootNavigationController.m */; };
@@ -35,18 +35,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D209B831ADD1F9A00A4AE3F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9D209B851ADD1FA200A4AE3F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9D209B871ADD1FA800A4AE3F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9D209B891ADD1FAD00A4AE3F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		9D608DAA1B422DEE00888180 /* LAS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LAS.framework; path = Frameworks/LAS.framework; sourceTree = "<group>"; };
-		9D8C6D5D1B427D8000036055 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9D91AAC51AEF977B000E32F0 /* PasswordResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordResetViewController.h; sourceTree = "<group>"; };
 		9D91AAC61AEF977B000E32F0 /* PasswordResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordResetViewController.m; sourceTree = "<group>"; };
 		9D91AACB1AEF9D3D000E32F0 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		9D91AACC1AEF9D3D000E32F0 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		9D92CC5B1AF1FC5C003A1A30 /* PasswordChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordChangeViewController.h; sourceTree = "<group>"; };
 		9D92CC5C1AF1FC5C003A1A30 /* PasswordChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordChangeViewController.m; sourceTree = "<group>"; };
+		9DA8D9D31BC914BB00644D48 /* MaxLeap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxLeap.framework; path = Frameworks/MaxLeap.framework; sourceTree = "<group>"; };
+		9DA8D9D51BC914C700644D48 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9DA8D9D71BC914CF00644D48 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		9DAC42E91AA1C0E300A69163 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		9DAC42EA1AA1C0E300A69163 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		9DAC42EC1AA1C0F500A69163 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -80,12 +80,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D8C6D5E1B427D8000036055 /* libz.dylib in Frameworks */,
-				9D608DAB1B422DEE00888180 /* LAS.framework in Frameworks */,
+				9DA8D9D81BC914CF00644D48 /* libz.tbd in Frameworks */,
+				9DA8D9D61BC914C700644D48 /* libsqlite3.tbd in Frameworks */,
 				9D209B8A1ADD1FAD00A4AE3F /* CoreTelephony.framework in Frameworks */,
+				9DA8D9D41BC914BB00644D48 /* MaxLeap.framework in Frameworks */,
 				9D209B881ADD1FA800A4AE3F /* MobileCoreServices.framework in Frameworks */,
 				9D209B861ADD1FA200A4AE3F /* SystemConfiguration.framework in Frameworks */,
-				9D209B841ADD1F9A00A4AE3F /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,12 +95,12 @@
 		9DAC42E81AA1B0F600A69163 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9D8C6D5D1B427D8000036055 /* libz.dylib */,
-				9D608DAA1B422DEE00888180 /* LAS.framework */,
+				9DA8D9D71BC914CF00644D48 /* libz.tbd */,
+				9DA8D9D51BC914C700644D48 /* libsqlite3.tbd */,
+				9DA8D9D31BC914BB00644D48 /* MaxLeap.framework */,
 				9D209B891ADD1FAD00A4AE3F /* CoreTelephony.framework */,
 				9D209B871ADD1FA800A4AE3F /* MobileCoreServices.framework */,
 				9D209B851ADD1FA200A4AE3F /* SystemConfiguration.framework */,
-				9D209B831ADD1F9A00A4AE3F /* libsqlite3.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 		9DC127491A382E61008B4182 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = LAS;
 				TargetAttributes = {
 					9DC127501A382E61008B4182 = {
@@ -322,6 +322,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -403,6 +404,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "as.leap.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PrivateFile;
 				PROVISIONING_PROFILE = "";
 			};
@@ -426,6 +428,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "as.leap.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PrivateFile;
 				PROVISIONING_PROFILE = "";
 			};

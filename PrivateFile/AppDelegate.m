@@ -3,11 +3,11 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 14/12/10.
-//  Copyright (c) 2014年 LAS. All rights reserved.
+//  Copyright (c) 2014年 MaxLeap. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import <LAS/LAS.h>
+#import <MaxLeap/MaxLeap.h>
 
 @interface AppDelegate ()
 
@@ -19,10 +19,10 @@
     // Override point for customization after application launch.
     
     // ****************************************************************************
-    // Uncommit fill in with your LAS credentials:
+    // Uncommit fill in with your MaxLeap credentials:
     // ****************************************************************************
-#warning Please fill in with your LAS credentials
-    // [LAS setApplicationId:@"APPLICATION_ID_HERE" clientKey:@"CLIENT_KEY_HERE"];
+#error Please fill in with your MaxLeap credentials
+    // [MaxLeap setApplicationId:@"APPLICATION_ID_HERE" clientKey:@"CLIENT_KEY_HERE"];
     
     return YES;
 }

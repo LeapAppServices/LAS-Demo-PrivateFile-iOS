@@ -3,11 +3,11 @@
 //  PrivateFile
 //
 //  Created by Sun Jin on 4/28/15.
-//  Copyright (c) 2015 LAS. All rights reserved.
+//  Copyright (c) 2015 MaxLeap. All rights reserved.
 //
 
 #import "PasswordResetViewController.h"
-#import <LAS/LAS.h>
+#import <MaxLeap/MaxLeap.h>
 
 @interface PasswordResetViewController () <UITextFieldDelegate>
 
@@ -41,7 +41,7 @@
         return;
     }
     
-    [LASUserManager requestPasswordResetForEmailInBackground:self.emialField.text block:^(BOOL succeeded, NSError *error) {
+    [MLUser requestPasswordResetForEmailInBackground:self.emialField.text block:^(BOOL succeeded, NSError *error) {
         NSLog(@"send password reset email success: %d, error: %@", succeeded, error);
     }];
 }
